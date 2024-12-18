@@ -5,31 +5,32 @@ if not camera.isOpened():
     print("Camera not found")
     exit()
 else:
-    #define the codec and create videowriter object
-    fourcc = cv2.VideoWriter_fourcc(*'XVID') #for .AVI XVID
+    # Define the codec and create videowriter object
+    fourcc = cv2.VideoWriter_fourcc(*'XVID') # For .AVI XVID
     
     out = cv2.VideoWriter('captured_video.avi', fourcc, 20.0, (640, 480))
     while True:
         
-        #to capture an image
-        result,frame = camera.read()
+
+        result, frame = camera.read()
         if not result:
-            print("unable to capture the frame")
+            print("Unable to capture the frame")
             break
+        out.write(frame)
         
-        # Display the frame
-        imshow("press q to capture or c to cancel ",frame)
+ 
+        imshow("Video Capture", frame)
         
-        # check for keypress
         key = cv2.waitKey(1)
         
         if key == ord('q'):
-            cv2.imwrite("test2.jpg",frame)
-            print("image saved")
+            # cv2.imwrite("captured_frame.jpg", frame) 
+            print("video saved")
             break
         elif key == ord('c'):
-            print("capture cancelled")
+            print("Capture cancelled")
             break
+    out.release()
             
 camera.release()
 cv2.destroyAllWindows()
