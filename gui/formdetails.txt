@@ -1,0 +1,18 @@
+----------------------------------------------------------------------------------
+Name : lava
+age : 
+Number : 123
+EmailId : 
+College : 
+Course : 
+Usn : 
+Gender : female
+----------------------------------------------------------------------------------
+Name : mallu
+age : 99
+Number : 
+EmailId : 
+College : 
+Course : 
+Usn : 
+Gender : mae
